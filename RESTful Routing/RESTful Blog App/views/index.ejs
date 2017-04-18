@@ -1,0 +1,13 @@
+<% include ./partials/header %>
+
+<h1>Index Page!!!</h1>
+
+<% for (let i = 0; i < blogs.length; i++) {%>
+    <h2><%= blogs[i].title %></h2>
+    <img src="<%= blogs[i].image %>">
+    <span><%= blogs[i].created.toDateString() %></span>
+    <p><%= blogs[i].body.substring(0, 100) %>...</p>
+    <a href="/blogs/<%= blogs[i]._id%>">Read More</a>
+<% } %>
+
+<% include ./partials/footer %>

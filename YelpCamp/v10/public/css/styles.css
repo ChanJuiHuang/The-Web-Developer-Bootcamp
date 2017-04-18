@@ -1,0 +1,30 @@
+.form-style {
+    width: 30%;
+    margin: 25px auto;
+}
+
+.thumbnail img{
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.delete-method {
+    display: inline;
+}
+
+.landing-header {
+    text-align: center;
+    margin-bottom: 35%;
+}
+
+.landing-header h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.landing-margin {
+    margin-bottom: 0;
+}

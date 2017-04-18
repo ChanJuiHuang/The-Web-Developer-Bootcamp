@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap@next/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="./styles.css">
+  <title>Vuejs</title>
+</head>
+<body>
+  <div id="app" class="container">
+    <label for="name">Name</label><br>
+    <input id="name" type="text" placeholder="input your name..." v-model="newPerson.name" required=""><br>
+    <label for="phone">Phone</label><br>
+    <input id="phone" type="text" placeholder="input your phone..." v-model="newPerson.phone"><br>
+
+    <div>
+      <div>Mo 老大是唯一的信仰!!!</div>
+      <input type="radio" id="true" name="answer" value="true" v-model="newPerson.answer">
+      <label for="true">true</label>
+      <input type="radio" id="false" name="answer" value="false" v-model="newPerson.answer">
+      <label for="false">false</label>
+    </div>
+
+    <div>
+      <div>Language</div>
+      <select name="language" v-model="newPerson.language">
+        <option disabled value="">Language</option>
+        <option value="Chinese">Chinese</option>
+        <option value="English">English</option>
+      </select>
+    </div>
+
+    <div>
+      <button type="button" v-on:click="add()">Add</button>
+      <button type="button" v-on:click="cancel()">Cancel</button>
+    </div>
+    <hr>
+
+    <input type="text" placeholder="Search Everything" v-model="searchKey">
+
+    <table>
+      <thead>
+        <th v-on:click="sort('name')"><a href="#">name</a></th>
+        <th v-on:click="sort('phone')"><a href="#">phone</a></th>
+        <th v-on:click="sort('answer')"><a href="#">answer</a></th>
+        <th v-on:click="sort('language')"><a href="#">language</a></th>
+        <th>Remove</th>
+      </thead>
+      <tbody>
+          <tr v-for="(item, index) in displayedPeople">
+            <td>{{item.name}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.answer}}</td>
+            <td>{{item.language}}</td>
+            <td><button type="button" v-on:click="remove(item.name)">Remove</button></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="/views.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<h1>Resluts page!!!</h1>
+
+<% if (!movies) {%>
+    <h2>Not Found^^</h2>
+<% } else { %>
+    <ul>
+        <% for (let i = 0; i < movies.length; i++) {%>
+            <li>
+                <strong><%= movies[i].Title %></strong>
+                - <%= movies[i].Year%>
+            </li>
+        <% } %>
+    </ul>
+<% } %>
+
+<a href="/">Search again!</a>
